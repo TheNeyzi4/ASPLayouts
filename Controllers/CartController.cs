@@ -40,5 +40,18 @@ namespace HomeworkMVC.Controllers
             }
             return RedirectToAction("Index");
         }
+
+        public IActionResult RemoveItem(int id)
+        {
+
+            var cartItem = cart.FirstOrDefault(c => c.ProductId == id);
+
+            if (cartItem != null)
+            {
+
+                cart.Remove(cartItem);
+            }
+            return RedirectToAction(nameof(Index));
+        }
     }
 }

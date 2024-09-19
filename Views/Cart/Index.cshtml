@@ -6,8 +6,6 @@
 
 <body>
     <main>
-        <h1>Cart</h1>
-
         <table class="table">
             <thead>
                 <tr>
@@ -25,6 +23,9 @@
                          <td>@product.Price</td>
                          <td>@product.Quantity</td>
                          <td>@(product.Price * product.Quantity)</td>
+                         <td>
+                                <a class="btn btn-primary" href="@Url.Action("RemoveItem", "Cart", new { id = product.ProductId })">Delete</a>
+                         </td>
                     </tr>
                 }
             </tbody>
